@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Shreya Design Studio | Exquisite Aari & Handicraft Art</title>
-    <!-- Google Fonts for elegant typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (free icons) -->
+    <title>शिल्पसौरभ | Aari & Handicraft Atelier</title>
+    <!-- Google Fonts + Elegant Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -17,23 +17,17 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #fefaf5;
-            color: #2c2418;
+            background: #FFFBF5;
+            color: #2C2418;
             scroll-behavior: smooth;
             line-height: 1.5;
+            overflow-x: hidden;
         }
 
-        /* custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f0e7db;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #b87c4f;
-            border-radius: 10px;
-        }
+        /* scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F3E9DF; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #C18154; border-radius: 10px; }
 
         .container {
             max-width: 1280px;
@@ -41,636 +35,484 @@
             padding: 0 32px;
         }
 
-        /* header / navigation */
+        /* navbar glassmorphism */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 0;
+            padding: 20px 0;
             flex-wrap: wrap;
-            border-bottom: 1px solid rgba(184, 124, 79, 0.2);
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 251, 245, 0.92);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(193, 129, 84, 0.2);
+            transition: all 0.3s;
         }
 
         .logo h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #b55b2c, #9c4a2a);
+            background: linear-gradient(130deg, #A65D32, #C48154);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            letter-spacing: -0.3px;
         }
-
         .logo p {
-            font-size: 0.8rem;
-            color: #b27a50;
-            letter-spacing: 1px;
-            margin-top: 4px;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            color: #B47C55;
         }
 
         .nav-links a {
             margin-left: 32px;
             text-decoration: none;
             font-weight: 500;
-            color: #4a3520;
-            transition: color 0.2s;
-            font-size: 1rem;
+            color: #4E3822;
+            transition: 0.2s;
+            position: relative;
         }
-
-        .nav-links a:hover {
-            color: #b5622e;
+        .nav-links a:hover { color: #C16E3C; }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: #C16E3C;
+            transition: 0.3s;
         }
+        .nav-links a:hover::after { width: 100%; }
 
         /* hero section */
         .hero {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            justify-content: space-between;
-            gap: 40px;
+            gap: 48px;
             padding: 60px 0 40px;
         }
-
-        .hero-content {
-            flex: 1;
-        }
-
+        .hero-content { flex: 1; }
         .hero-content .tag {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #b87c4f;
+            letter-spacing: 4px;
+            color: #BE7A4A;
             font-weight: 600;
         }
-
         .hero-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
             line-height: 1.2;
-            margin: 16px 0 20px;
-            color: #2a1f12;
+            margin: 18px 0 20px;
+            color: #2F2217;
         }
-
         .hero-content p {
             font-size: 1.1rem;
-            color: #5c4a34;
-            max-width: 500px;
+            color: #6A4F32;
             margin-bottom: 32px;
         }
-
-        .btn-group {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
+        .btn-group { display: flex; gap: 20px; flex-wrap: wrap; }
         .btn {
-            padding: 12px 28px;
-            border-radius: 40px;
+            padding: 12px 32px;
+            border-radius: 50px;
             font-weight: 600;
-            text-decoration: none;
-            transition: all 0.25s ease;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
             display: inline-block;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            border: none;
+            font-size: 0.95rem;
         }
-
         .btn-primary {
-            background: #b5622e;
+            background: #BC6F3E;
             color: white;
-            border: 1px solid #b5622e;
+            box-shadow: 0 6px 14px rgba(188, 111, 62, 0.2);
         }
-
         .btn-primary:hover {
-            background: #944a1f;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(181, 91, 44, 0.2);
+            background: #9E542E;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 24px rgba(156, 80, 40, 0.25);
         }
-
         .btn-outline {
-            border: 1px solid #b87c4f;
-            color: #b5622e;
+            border: 1.5px solid #C17F52;
             background: transparent;
+            color: #BC6F3E;
         }
-
         .btn-outline:hover {
-            background: #f7ede4;
-            border-color: #9c562c;
+            background: #FCF1E8;
+            transform: translateY(-2px);
         }
-
         .hero-image {
             flex: 1;
-            background: #ecd9c6;
-            border-radius: 36px;
+            border-radius: 48px;
             overflow: hidden;
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+            box-shadow: 0 25px 35px -15px rgba(0,0,0,0.12);
+            transition: 0.4s;
         }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-
-        .hero-image:hover img {
-            transform: scale(1.02);
-        }
+        .hero-image img { width: 100%; display: block; transition: transform 0.5s; }
+        .hero-image:hover img { transform: scale(1.02); }
 
         /* section headings */
         .section-head {
             text-align: center;
             margin: 70px 0 40px;
         }
-
         .section-head h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
             font-weight: 600;
-            color: #312219;
+            color: #2E2219;
         }
-
         .section-head .sub {
-            color: #a57352;
-            font-size: 1rem;
-            margin-top: 8px;
+            color: #A77A56;
             letter-spacing: 1px;
+            margin-top: 8px;
         }
 
-        /* gallery grid - Aari works & handicraft unified style */
+        /* gallery grid */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
             gap: 32px;
-            margin: 40px 0 20px;
+            margin: 30px 0 20px;
         }
-
         .art-card {
-            background: #ffffff;
-            border-radius: 28px;
+            background: white;
+            border-radius: 32px;
             overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
-            border: 1px solid #f1e2d4;
+            transition: all 0.35s ease;
+            box-shadow: 0 12px 28px -12px rgba(78, 48, 28, 0.08);
+            border: 1px solid #F2E3D6;
         }
-
         .art-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 24px 36px -12px rgba(98, 57, 28, 0.15);
-            border-color: #e7cfbc;
+            transform: translateY(-10px);
+            box-shadow: 0 28px 40px -18px rgba(110, 60, 28, 0.2);
+            border-color: #E4CFBC;
         }
-
         .card-img {
             height: 280px;
             overflow: hidden;
-            background: #f2e3d6;
+            background: #EFE1D2;
         }
-
         .card-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: 0.6s;
         }
-
-        .art-card:hover .card-img img {
-            transform: scale(1.05);
-        }
-
-        .card-info {
-            padding: 20px 18px 24px;
-        }
-
+        .art-card:hover .card-img img { transform: scale(1.07); }
+        .card-info { padding: 20px 20px 24px; }
         .card-info h4 {
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 8px;
-            color: #422f1e;
+            font-family: 'Cormorant Garamond', serif;
         }
-
-        .card-info p {
-            color: #6b4f32;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            margin-top: 8px;
-        }
-
         .badge {
-            display: inline-block;
-            background: #f6ede5;
-            color: #a5562c;
+            background: #F7EDE4;
+            color: #AD6237;
             font-size: 0.7rem;
             font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 30px;
+            padding: 5px 12px;
+            border-radius: 40px;
+            display: inline-block;
             margin-top: 12px;
         }
 
-        /* featured banner (handicraft story) */
-        .feature-banner {
-            background: linear-gradient(105deg, #f9efea 0%, #fff5ed 100%);
-            border-radius: 48px;
-            padding: 50px 40px;
+        /* about section (studio story) */
+        .about-section {
+            background: linear-gradient(115deg, #FEF7EF 0%, #FFF3E9 100%);
+            border-radius: 56px;
+            padding: 56px 44px;
             margin: 70px 0;
             display: flex;
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 48px;
             align-items: center;
-            justify-content: space-between;
         }
-
-        .banner-text {
-            flex: 1.2;
-        }
-
-        .banner-text h3 {
-            font-size: 2rem;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .banner-text p {
-            color: #5c3f24;
-            margin-bottom: 24px;
-            max-width: 90%;
-        }
-
-        .banner-img {
-            flex: 0.9;
-            border-radius: 32px;
-            overflow: hidden;
-            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-        }
-
-        .banner-img img {
-            width: 100%;
-            display: block;
-        }
-
-        /* testimonial / craft essence */
-        .craft-quote {
-            text-align: center;
-            background: #fff6ef;
-            padding: 48px 32px;
-            border-radius: 64px;
-            margin: 40px 0 60px;
-        }
-
-        .craft-quote i {
+        .about-text { flex: 1.3; }
+        .about-text h3 {
+            font-family: 'Cormorant Garamond', serif;
             font-size: 2.4rem;
-            color: #cb8b60;
-            opacity: 0.6;
+            font-weight: 700;
+            margin-bottom: 18px;
+            position: relative;
         }
+        .about-text p { color: #5C402A; margin-bottom: 24px; line-height: 1.6; }
+        .about-img { flex: 1; border-radius: 36px; overflow: hidden; box-shadow: 0 18px 30px rgba(0,0,0,0.1); }
 
-        .craft-quote p {
+        /* testimonial slider effect */
+        .testimonial-block {
+            background: #FFF1E6;
+            padding: 48px 28px;
+            border-radius: 72px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .testimonial-block i { font-size: 2.5rem; color: #D99567; opacity: 0.7; }
+        .testimonial-text {
             font-size: 1.5rem;
             font-style: italic;
-            font-family: 'Playfair Display', serif;
-            color: #3e2c1b;
-            max-width: 780px;
-            margin: 16px auto;
+            font-family: 'Cormorant Garamond', serif;
+            max-width: 800px;
+            margin: 20px auto;
         }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background: #FCF3EA;
+            border-radius: 56px;
+            padding: 50px 40px;
+            margin: 70px 0 50px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+        }
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            align-items: flex-start;
+        }
+        .contact-info { flex: 1; }
+        .contact-info h3 { font-size: 2rem; font-family: 'Cormorant Garamond', serif; margin-bottom: 20px; }
+        .contact-detail { margin: 24px 0; display: flex; gap: 16px; align-items: center; }
+        .contact-form { flex: 1.2; background: white; padding: 32px; border-radius: 40px; box-shadow: 0 12px 28px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 22px; }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #E9DBCE;
+            border-radius: 40px;
+            font-family: 'Inter', sans-serif;
+            background: #FEFAF5;
+            transition: 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #C57F4E;
+            box-shadow: 0 0 0 3px rgba(197, 127, 78, 0.2);
+        }
+        button.btn-submit {
+            background: #BC6F3E;
+            width: 100%;
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 14px;
+            border-radius: 60px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        button.btn-submit:hover { background: #9C542E; transform: scale(0.98); }
+        .form-message { margin-top: 16px; font-size: 0.9rem; text-align: center; }
 
         /* footer */
         footer {
-            background: #271f16;
-            color: #e7d9ce;
+            background: #241E16;
+            color: #EADBCE;
             padding: 48px 0 24px;
-            margin-top: 60px;
-            border-radius: 40px 40px 0 0;
+            border-radius: 48px 48px 0 0;
+            margin-top: 20px;
         }
-
-        .footer-inner {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .footer-col h4 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 16px;
-            font-weight: 500;
-            color: #f7e5d8;
-        }
-
-        .footer-col p, .footer-col a {
-            color: #cfbcab;
-            text-decoration: none;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .social-icons a {
-            color: #e2cdb9;
-            margin-right: 18px;
-            font-size: 1.2rem;
-            transition: color 0.2s;
-        }
-
-        .social-icons a:hover {
-            color: #d48f60;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 40px;
-            margin-top: 30px;
-            border-top: 1px solid #3f2f21;
-            font-size: 0.8rem;
-            color: #b5957a;
-        }
+        .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
+        .footer-col h4 { font-family: 'Cormorant Garamond', serif; margin-bottom: 18px; font-size: 1.3rem; }
+        .footer-col a, .footer-col p { color: #D8C2AD; text-decoration: none; font-size: 0.9rem; line-height: 1.7; }
+        .social-icons a { margin-right: 20px; font-size: 1.3rem; transition: 0.2s; display: inline-block; }
+        .social-icons a:hover { color: #E6A36F; transform: translateY(-3px); }
+        .copyright { text-align: center; padding-top: 40px; border-top: 1px solid #3F2E1F; margin-top: 32px; font-size: 0.75rem; }
 
         @media (max-width: 780px) {
-            .container {
-                padding: 0 24px;
-            }
-            .hero-content h2 {
-                font-size: 2.5rem;
-            }
-            .navbar {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .nav-links a {
-                margin: 0 16px;
-            }
-            .section-head h3 {
-                font-size: 2rem;
-            }
-            .feature-banner {
-                flex-direction: column;
-                text-align: center;
-            }
-            .banner-text p {
-                max-width: 100%;
-            }
-            .craft-quote p {
-                font-size: 1.2rem;
-            }
+            .container { padding: 0 20px; }
+            .hero-content h2 { font-size: 2.4rem; }
+            .navbar { flex-direction: column; }
+            .nav-links a { margin: 0 12px; }
+            .section-head h3 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Navigation Bar -->
+    <!-- Navigation with proper anchor links -->
     <div class="navbar">
         <div class="logo">
-            <h1>Shreya Design Studio</h1>
-            <p>✨ Aari Embroideries · Handcrafted Treasures ✨</p>
+            <h1>शिल्पसौरभ</h1>
+            <p>AARI · HANDICRAFT · HERITAGE</p>
         </div>
         <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Aari Gallery</a>
-            <a href="#">Handicrafts</a>
-            <a href="#">Studio Story</a>
-            <a href="#">Connect</a>
+            <a href="#home">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about-us">About Us</a>
+            <a href="#testimonials">Stories</a>
+            <a href="#contact-section">Contact</a>
         </div>
     </div>
 
-    <!-- Hero Section with Photo -->
+    <!-- Home section anchor -->
+    <div id="home"></div>
     <div class="hero">
         <div class="hero-content">
-            <div class="tag">✦ Timeless Craftsmanship ✦</div>
-            <h2>Where tradition meets modern elegance</h2>
-            <p>Exquisite Aari embroidery and authentic Indian handicrafts — each piece tells a story of skilled hands and artistic vision.</p>
+            <div class="tag">✦ HANDCRAFTED WITH SOUL ✦</div>
+            <h2>Aari embroidery & Indian handicrafts<br>woven into modern elegance</h2>
+            <p>Celebrating 15 years of intricate needlework, authentic crafts, and timeless beauty — each piece tells a story of skilled hands and artistic spirit.</p>
             <div class="btn-group">
-                <a href="#" class="btn btn-primary">Explore Collections</a>
-                <a href="#" class="btn btn-outline">Custom Orders</a>
+                <a href="#gallery" class="btn btn-primary">Discover Collections</a>
+                <a href="#contact-section" class="btn btn-outline">Custom Orders</a>
             </div>
         </div>
         <div class="hero-image">
-            <!-- Hero photo: Aari work masterpiece (high-quality placeholder but represents intricate design) -->
-            <img src="https://placehold.co/800x600/f7e9de/b87c4f?text=Shreya+Studio+%7C+Aari+Masterpiece" 
-                 alt="Shreya Design Studio Aari Embroidery Showcase"
-                 onerror="this.src='https://picsum.photos/id/107/800/600'; this.onerror=null;">
+            <img src="https://picsum.photos/id/163/800/600" alt="Aari Masterpiece" style="object-fit:cover; width:100%;" onerror="this.src='https://picsum.photos/id/30/800/600'">
         </div>
     </div>
 
-    <!-- Aari Works + Handicraft Gallery Section (combined essence) -->
+    <!-- GALLERY SECTION (Aari work + Handicraft images) -->
+    <div id="gallery"></div>
     <div class="section-head">
-        <h3>✨ Signature Aari & Handicraft Gallery ✨</h3>
-        <div class="sub">Meticulous needlework · Heritage art forms · contemporary designs</div>
-    </div>
-
-    <div class="gallery-grid">
-        <!-- Card 1: Aari work with photo -->
-        <div class="art-card">
-            <div class="card-img">
-                <img src="https://placehold.co/600x500/f2e0d0/aa734b?text=Aari+Floral+Motif" 
-                     alt="Aari work floral design"
-                     onerror="this.src='https://picsum.photos/id/20/600/500'; this.onerror=null;">
-            </div>
-            <div class="card-info">
-                <h4>Mughal Aari Blouse</h4>
-                <p>Intricate hook work with fine zari and bead embellishments. Perfect for festive elegance.</p>
-                <span class="badge"><i class="fas fa-thread"></i> Aari Embroidery</span>
-            </div>
-        </div>
-
-        <!-- Card 2: Handicraft / Wooden craft -->
-        <div class="art-card">
-            <div class="card-img">
-                <img src="https://placehold.co/600x500/e7d9cb/b08258?text=Handcarved+Wooden+Art" 
-                     alt="Handicraft wooden artifact"
-                     onerror="this.src='https://picsum.photos/id/96/600/500'; this.onerror=null;">
-            </div>
-            <div class="card-info">
-                <h4>Handcarved Walnut Keepsake</h4>
-                <p>Traditional Indian handicraft — ethically sourced wood, hand-painted motifs.</p>
-                <span class="badge"><i class="fas fa-palette"></i> Wood Craft</span>
-            </div>
-        </div>
-
-        <!-- Card 3: Aari Saree border -->
-        <div class="art-card">
-            <div class="card-img">
-                <img src="https://placehold.co/600x500/f5e3d4/b77b4a?text=Aari+Silk+Saree+Border" 
-                     alt="Aari silk saree border"
-                     onerror="this.src='https://picsum.photos/id/30/600/500'; this.onerror=null;">
-            </div>
-            <div class="card-info">
-                <h4>Silk Saree Border</h4>
-                <p>Delicate Aari chain stitch with metallic threads and sequins. Handcrafted in Varanasi style.</p>
-                <span class="badge"><i class="fas fa-star"></i> Couture Aari</span>
-            </div>
-        </div>
-
-        <!-- Card 4: Handicraft – terracotta / pottery -->
-        <div class="art-card">
-            <div class="card-img">
-                <img src="https://placehold.co/600x500/f1e2cf/b27a4d?text=Terracotta+Warli+Art" 
-                     alt="Terracotta handicraft"
-                     onerror="this.src='https://picsum.photos/id/102/600/500'; this.onerror=null;">
-            </div>
-            <div class="card-info">
-                <h4>Terracotta Warli Collection</h4>
-                <p>Handcrafted pottery with natural dyes and tribal art, celebrating rural craftsmanship.</p>
-                <span class="badge"><i class="fas fa-hands"></i> Clay Art</span>
-            </div>
-        </div>
-
-        <!-- Card 5: Aari with mirror work -->
-        <div class="art-card">
-            <div class="card-img">
-                <img src="https://placehold.co/600x500/f8e8da/c38557?text=Aari+Mirror+Work+Cushion" 
-                     alt="Aari mirror work cushion"
-                     onerror="this.src='https://picsum.photos/id/104/600/500'; this.onerror=null;">
-            </div>
-            <div class="card-info">
-                <h4>Shisha Mirror Aari Cushion</h4>
-                <p>Traditional shisha embroidery meets contemporary decor — vibrant and textural.</p>
-                <span class="badge"><i class="fas fa-gem"></i> Mirror Aari</span>
-            </div>
-        </div>
-
-        <!-- Card 6: Handicraft – Handwoven textiles -->
-        <div class="art-card">
-            <div class="card-img">
-                <img src="https://placehold.co/600x500/e6d5c0/b47746?text=Handblock+Print+Textile" 
-                     alt="Handblock printed fabric"
-                     onerror="this.src='https://picsum.photos/id/40/600/500'; this.onerror=null;">
-            </div>
-            <div class="card-info">
-                <h4>Handblock Printed Throws</h4>
-                <p>Natural dyes & traditional block prints by master artisans from Rajasthan.</p>
-                <span class="badge"><i class="fas fa-fan"></i> Textile Craft</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Additional Handicraft & Aari feature banner with photo -->
-    <div class="feature-banner">
-        <div class="banner-text">
-            <h3><i class="fas fa-hand-sparkles"></i> The art of Aari & handmade legacy</h3>
-            <p>Shreya Design Studio collaborates with rural artisans and skilled embroiderers to preserve India’s rich needlecraft. Each Aari piece undergoes 100+ hours of handwork — from tracing to finishing. Our handicraft collection supports fair trade and sustainable artistry.</p>
-            <a href="#" class="btn btn-primary" style="background:#8f583a;">Know our artisans →</a>
-        </div>
-        <div class="banner-img">
-            <img src="https://placehold.co/500x400/f4e2cf/b48254?text=Artisan+at+Work+%7C+Aari+Detail" 
-                 alt="Artisan doing Aari embroidery"
-                 onerror="this.src='https://picsum.photos/id/106/500/400'; this.onerror=null;">
-        </div>
-    </div>
-
-    <!-- Craftsmanship quote / inspiration -->
-    <div class="craft-quote">
-        <i class="fas fa-quote-right"></i>
-        <p>"Every Aari stitch whispers heritage, every handicraft sings the soil’s story. We design for those who cherish slow, soulful beauty."</p>
-        <div style="margin-top: 16px; font-weight: 500;">— Shreya Mehta, Founder & Creative Director</div>
-    </div>
-
-    <!-- Second gallery: more diverse handicraft + Aari works (showing variety) -->
-    <div class="section-head">
-        <h3>🌸 Bestselling Collections 🌸</h3>
-        <div class="sub">Aari ensembles · Handicraft home decor · Heirloom gifts</div>
+        <h3>✨ Timeless Aari & Handicraft Treasures ✨</h3>
+        <div class="sub">Meticulous hook embroidery · Sustainable crafts · Heirloom quality</div>
     </div>
     <div class="gallery-grid">
-        <div class="art-card">
-            <div class="card-img">
-                <img src="https://placehold.co/600x500/e8d5c2/b17d53?text=Aari+Lehenga+Choli" 
-                     alt="Aari lehenga embroidery"
-                     onerror="this.src='https://picsum.photos/id/29/600/500'; this.onerror=null;">
-            </div>
-            <div class="card-info">
-                <h4>Festival Aari Lehenga</h4>
-                <p>Heavy zardozi and Aari work on raw silk. Fully customizable with color palettes.</p>
-                <span class="badge">Bridal Aari</span>
-            </div>
+        <div class="art-card"><div class="card-img"><img src="https://picsum.photos/id/176/600/500" alt="Aari Floral Work"></div><div class="card-info"><h4>Mughal Aari Blouse</h4><p>Fine zari & beadwork, intricate floral vine patterns. Handcrafted in Lucknow.</p><span class="badge"><i class="fas fa-thread"></i> Aari Embroidery</span></div></div>
+        <div class="art-card"><div class="card-img"><img src="https://picsum.photos/id/219/600/500" alt="Wooden Handicraft"></div><div class="card-info"><h4>Handcarved Walnut Art</h4><p>Traditional Indian woodcraft with hand-painted motifs, eco-friendly.</p><span class="badge"><i class="fas fa-tree"></i> Wood Craft</span></div></div>
+        <div class="art-card"><div class="card-img"><img src="https://picsum.photos/id/42/600/500" alt="Aari Silk Saree"></div><div class="card-info"><h4>Silk Saree Border</h4><p>Aari chain stitch with sequins & metallic threads. Varanasi elegance.</p><span class="badge"><i class="fas fa-star"></i> Couture Aari</span></div></div>
+        <div class="art-card"><div class="card-img"><img src="https://picsum.photos/id/108/600/500" alt="Terracotta Craft"></div><div class="card-info"><h4>Terracotta Warli Art</h4><p>Handcrafted pottery with natural dyes, celebrating tribal narratives.</p><span class="badge"><i class="fas fa-hands"></i> Clay Art</span></div></div>
+        <div class="art-card"><div class="card-img"><img src="https://picsum.photos/id/184/600/500" alt="Mirror Aari Work"></div><div class="card-info"><h4>Shisha Mirror Aari Cushion</h4><p>Traditional mirror embroidery, vibrant textures & folk charm.</p><span class="badge"><i class="fas fa-gem"></i> Mirror Aari</span></div></div>
+        <div class="art-card"><div class="card-img"><img src="https://picsum.photos/id/96/600/500" alt="Handblock Print"></div><div class="card-info"><h4>Handblock Printed Throws</h4><p>Natural dyes & heritage block prints by master artisans.</p><span class="badge"><i class="fas fa-fan"></i> Textile Craft</span></div></div>
+    </div>
+
+    <!-- ABOUT US section (same page anchor) -->
+    <div id="about-us"></div>
+    <div class="about-section">
+        <div class="about-text">
+            <h3><i class="fas fa-leaf"></i> About Shilpasaurbha — Preserving Aari & Heritage Crafts</h3>
+            <p>Founded by master artisan Shreya Mehta, our studio is a sanctuary for India’s finest Aari embroidery and indigenous handicrafts. We collaborate with over 80 rural women artisans, empowering them with fair wages and creative freedom. Every Aari piece involves delicate hook work, taking 40 to 200 hours of devotion. Our handicraft collection ranges from Dhokra metalwork to handwoven textiles — each item carries the soul of Indian tradition.</p>
+            <p><i class="fas fa-heart" style="color:#C17F52;"></i> We believe in sustainable luxury, ethical sourcing, and timeless design that transcends seasons.</p>
+            <a href="#gallery" class="btn btn-primary" style="background:#9E582F; margin-top: 12px;">Explore our collection</a>
         </div>
-        <div class="art-card">
-            <div class="card-img">
-                <img src="https://placehold.co/600x500/f5e7d8/bd7c48?text=Dhokra+Metal+Craft" 
-                     alt="Dhokra handicraft"
-                     onerror="this.src='https://picsum.photos/id/119/600/500'; this.onerror=null;">
-            </div>
-            <div class="card-info">
-                <h4>Dhokra Metal Artifacts</h4>
-                <p>Ancient lost-wax casting technique — tribal elephants, lamps, decor pieces.</p>
-                <span class="badge">Metal Handicraft</span>
-            </div>
-        </div>
-        <div class="art-card">
-            <div class="card-img">
-                <img src="https://placehold.co/600x500/f1e3cf/bd7a48?text=Aari+Bridal+dupatta" 
-                     alt="Aari dupatta with fine details"
-                     onerror="this.src='https://picsum.photos/id/82/600/500'; this.onerror=null;">
-            </div>
-            <div class="card-info">
-                <h4>Pearl & Aari Dupatta</h4>
-                <p>Sheer organza dupatta with intricate Aari bootis and pearl tassels.</p>
-                <span class="badge">Luxury Aari</span>
-            </div>
+        <div class="about-img">
+            <img src="https://picsum.photos/id/167/500/450" alt="Artisan doing Aari" style="width:100%; display:block; border-radius: 32px;">
         </div>
     </div>
 
-    <!-- Handicraft studio process / additional photos -->
-    <div style="background: #fcf6ef; border-radius: 40px; padding: 36px 28px; margin: 40px 0;">
-        <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: center;">
-            <div style="flex:1; min-width: 200px;">
-                <img src="https://placehold.co/400x300/f3e2cf/b68154?text=Aari+Tools+%26+Threads" 
-                     alt="Aari needle and thread work"
-                     style="width:100%; border-radius: 28px; object-fit: cover;"
-                     onerror="this.src='https://picsum.photos/id/145/400/300'; this.onerror=null;">
-            </div>
-            <div style="flex:2">
-                <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; color:#4f2f1a;"><i class="fas fa-scroll"></i> Our studio's promise</h3>
-                <p style="margin-top: 12px; color:#5a3f28;">At Shreya Design Studio, we work directly with over 50+ female artisans practicing Aari embroidery and traditional handicrafts. Each creation reflects ethical production and timeless design. We blend modern aesthetics with classic needlework — from custom wedding trousseaus to artisan homeware.</p>
-                <div style="margin-top: 20px; display: flex; gap: 20px;">
-                    <span><i class="fas fa-check-circle" style="color:#b5622e;"></i> 100% Hand-embroidered</span>
-                    <span><i class="fas fa-check-circle" style="color:#b5622e;"></i> Natural fabrics & dyes</span>
-                    <span><i class="fas fa-check-circle" style="color:#b5622e;"></i> Direct artisan support</span>
+    <!-- Testimonial / craft essence section -->
+    <div id="testimonials"></div>
+    <div class="testimonial-block">
+        <i class="fas fa-quote-left"></i>
+        <div class="testimonial-text">"The intricate Aari work on my wedding lehenga was beyond imagination — each motif felt like poetry. Their handicraft collection adds warmth to my home."</div>
+        <div style="margin-top: 16px; font-weight: 600;">— Priyanka S., New Delhi</div>
+        <div style="margin-top: 12px;"><i class="fas fa-star" style="color:#E5A568;"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 400+ happy patrons</div>
+    </div>
+
+    <!-- SECONDARY GALLERY for variety -->
+    <div class="section-head"><h3>🌸 Bridal Aari & Home Decor Bestsellers 🌸</h3></div>
+    <div class="gallery-grid">
+        <div class="art-card"><div class="card-img"><img src="https://picsum.photos/id/120/600/500" alt="Aari Lehenga"></div><div class="card-info"><h4>Festival Aari Lehenga</h4><p>Heavy zardozi & Aari on raw silk, fully customizable.</p><span class="badge">Bridal Aari</span></div></div>
+        <div class="art-card"><div class="card-img"><img src="https://picsum.photos/id/89/600/500" alt="Dhokra craft"></div><div class="card-info"><h4>Dhokra Metal Art</h4><p>Ancient lost-wax casting, tribal elephants & decor pieces.</p><span class="badge">Metal Handicraft</span></div></div>
+        <div class="art-card"><div class="card-img"><img src="https://picsum.photos/id/145/600/500" alt="Aari Dupatta"></div><div class="card-info"><h4>Pearl & Aari Dupatta</h4><p>Sheer organza with intricate bootis and pearl tassels.</p><span class="badge">Luxury Aari</span></div></div>
+    </div>
+
+    <!-- CONTACT SECTION (with mailto simulation + interactive form) -->
+    <div id="contact-section" class="contact-section">
+        <div class="contact-flex">
+            <div class="contact-info">
+                <h3><i class="fas fa-envelope-open-text"></i> Let's weave dreams together</h3>
+                <p>Have a vision for custom Aari embroidery? Need a unique handicraft gift? Reach out — our artisan team will bring your ideas to life.</p>
+                <div class="contact-detail"><i class="fas fa-map-pin" style="font-size: 1.6rem; color:#BE6E3C;"></i> <span>Jaipur, Rajasthan (Studio) & Bhubaneswar Atelier</span></div>
+                <div class="contact-detail"><i class="fas fa-phone-alt"></i> <span>+91 98765 43210</span></div>
+                <div class="contact-detail"><i class="fas fa-clock"></i> <span>Mon - Sat: 10:00 AM – 6:30 PM IST</span></div>
+                <div class="social-icons" style="margin-top: 28px;">
+                    <a href="#" style="color:#AE6940;"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" style="color:#AE6940;"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" style="color:#AE6940;"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
+            <div class="contact-form">
+                <h4 style="font-family: 'Cormorant Garamond'; font-size: 1.8rem; margin-bottom: 20px;">Send us a message</h4>
+                <form id="contactForm">
+                    <div class="form-group"><input type="text" id="name" placeholder="Your name *" required></div>
+                    <div class="form-group"><input type="email" id="email" placeholder="Email address *" required></div>
+                    <div class="form-group"><input type="text" id="subject" placeholder="Subject (e.g., Aari custom order)"></div>
+                    <div class="form-group"><textarea rows="4" id="message" placeholder="Tell us about your Aari or handicraft requirement..." required></textarea></div>
+                    <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send Inquiry</button>
+                    <div id="formFeedback" class="form-message"></div>
+                </form>
+                <p style="font-size: 0.75rem; margin-top: 16px; text-align: center;">We’ll respond within 24 hours with design ideas & pricing.</p>
+            </div>
         </div>
     </div>
-
-</div> <!-- end container -->
+</div>
 
 <footer>
     <div class="container">
         <div class="footer-inner">
-            <div class="footer-col">
-                <h4>Shreya Design Studio</h4>
-                <p>Celebrating Aari embroidery and Indian handicrafts since 2012. Custom orders, workshops & global shipping.</p>
-                <div class="social-icons" style="margin-top: 16px;">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Explore</h4>
-                <p><a href="#">Aari Bridal Collection</a></p>
-                <p><a href="#">Handicraft Gifts</a></p>
-                <p><a href="#">Studio Workshops</a></p>
-                <p><a href="#">Collaborations</a></p>
-            </div>
-            <div class="footer-col">
-                <h4>Connect</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Balangir, Odisha, India </p>
-                <p><i class="fas fa-envelope"></i> contact@shreyadesign.arcshone.com</p>
-                <p><i class="fas fa-phone-alt"></i> +91 000000000</p>
-            </div>
+            <div class="footer-col"><h4>शिल्पसौरभ Studio</h4><p>Celebrating Aari embroidery & Indian handicrafts — custom bridal wear, artisan home decor, and workshops worldwide.</p><div class="social-icons"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+            <div class="footer-col"><h4>Quick links</h4><p><a href="#gallery">Aari Gallery</a></p><p><a href="#about-us">Our Story</a></p><p><a href="#contact-section">Custom Orders</a></p><p><a href="#">Sustainability</a></p></div>
+            <div class="footer-col"><h4>Ethical Promise</h4><p>✓ 100% hand-embroidered</p><p>✓ Direct artisan support</p><p>✓ Natural fabrics & dyes</p><p>✓ Free shipping (India)</p></div>
         </div>
-        <div class="copyright">
-            © 2026 Shreya Design Studio — Where Aari art meets timeless handicraft. All rights reserved.
-        </div>
+        <div class="copyright">© 2026 Shilpasaurbha — Where Aari art meets timeless handicraft. All rights reserved. | Crafted with ❤️ for heritage</div>
     </div>
 </footer>
 
-<!-- small script to ensure all placeholder images are visually relevant (just ensures no broken) -->
 <script>
     (function() {
-        // This script ensures that any broken images due to placeholder limits get replaced with high-quality craft-themed images from picsum or similar.
-        // but we've set onerror fallbacks inline already. Additional safety: replace any missing bg style.
-        console.log("Shreya Design Studio — Aari & Handicraft page ready");
+        // Smooth scroll for all anchor links (ensures proper offset due to sticky navbar)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === "#" || targetId === "") return;
+                const targetElem = document.querySelector(targetId);
+                if(targetElem) {
+                    e.preventDefault();
+                    const offset = 80; // sticky navbar height
+                    const elementPosition = targetElem.getBoundingClientRect().top + window.scrollY;
+                    window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // CONTACT FORM: Send email via mailto with filled data
+        const form = document.getElementById('contactForm');
+        const feedbackDiv = document.getElementById('formFeedback');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subjectRaw = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if(!name || !email || !message) {
+                feedbackDiv.innerHTML = '<span style="color:#c94f2b;">❌ Please fill all required fields (Name, Email, Message).</span>';
+                return;
+            }
+            if(!email.includes('@') || !email.includes('.')) {
+                feedbackDiv.innerHTML = '<span style="color:#c94f2b;">❌ Please enter a valid email address.</span>';
+                return;
+            }
+
+            // Build subject & body for email
+            const subject = subjectRaw ? `Aari/Handicraft Inquiry: ${subjectRaw}` : "New Inquiry from Shilpasaurbha Website";
+            const body = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}%0A%0A--- This inquiry was sent from the Aari & Handicraft website. ---`;
+            // recipient email (owner's mail id)
+            const recipient = "shreya.design@shilpasaurbha.in"; // replace with desired email, but functional via mailto
+            window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            feedbackDiv.innerHTML = '<span style="color:#2c7a47;">📧 Redirecting to your email client... Thank you for reaching out! We’ll connect soon.</span>';
+            // reset optional but we show message
+            setTimeout(() => {
+                feedbackDiv.innerHTML = '';
+            }, 5000);
+            form.reset();
+        });
     })();
 </script>
-
 </body>
 </html>
+```

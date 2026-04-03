@@ -106,7 +106,7 @@
             100% { opacity: 1; transform: translateY(0);}
         }
 
-        /* navbar glassmorphism + animated underline */
+        /* navbar glassmorphism + animated underline + scroll shadow */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -122,16 +122,25 @@
             border-bottom: 1px solid rgba(193, 129, 84, 0.25);
             transition: all 0.3s;
         }
+        .navbar.scrolled {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            background: rgba(255, 251, 245, 0.98);
+        }
         .logo h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            background: linear-gradient(130deg, #A65D32, #C48154);
+            background: linear-gradient(120deg, #A65D32, #E6A36F, #C48154);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            animation: shineText 6s linear infinite;
             letter-spacing: -0.3px;
-            transition: 0.3s;
+        }
+        @keyframes shineText {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
         }
         .logo p {
             font-size: 0.7rem;
@@ -180,7 +189,7 @@
             margin-top: 8px;
         }
 
-        /* gallery grid with hover animations */
+        /* gallery grid with hover animations + premium glow */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
@@ -195,6 +204,19 @@
             box-shadow: 0 12px 28px -12px rgba(78, 48, 28, 0.08);
             border: 1px solid #F2E3D6;
             position: relative;
+        }
+        .art-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 32px;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+            opacity: 0;
+            transition: 0.5s;
+            pointer-events: none;
+        }
+        .art-card:hover::after {
+            opacity: 1;
         }
         .art-card:hover {
             transform: translateY(-12px) scale(1.01);
@@ -347,16 +369,27 @@
             width: 40px;
             text-align: center;
         }
+        /* Social Icons Premium Style - WORKING LINKS */
         .social-icons a {
-            margin-right: 28px;
+            margin-right: 24px;
             font-size: 1.9rem;
             transition: all 0.3s ease;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFF3E8;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            text-decoration: none;
             color: #A2623A;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.08);
         }
         .social-icons a:hover {
-            transform: translateY(-6px) rotate(5deg);
-            color: #C56F3A;
+            transform: translateY(-8px) rotate(5deg);
+            background: #C67946;
+            color: white;
+            box-shadow: 0 12px 24px rgba(198,121,70,0.3);
         }
         .contact-form h4 {
             font-family: 'Cormorant Garamond', serif;
@@ -435,6 +468,21 @@
             transition: 0.25s;
             border: none;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.6s;
+        }
+        .btn-primary:hover::before {
+            left: 120%;
         }
         .btn-outline {
             background: transparent;
@@ -454,7 +502,7 @@
 
         /* footer */
         footer {
-            background: #241E16;
+            background: linear-gradient(135deg, #1c1610, #2c2218);
             color: #EADBCE;
             padding: 48px 0 24px;
             border-radius: 48px 48px 0 0;
@@ -483,6 +531,7 @@
             .contact-section { padding: 36px 24px; }
             .contact-form { padding: 28px 20px; }
             .contact-info h3 { font-size: 1.8rem; }
+            .social-icons a { width: 48px; height: 48px; font-size: 1.5rem; margin-right: 16px; }
         }
 
         .play-hint {
@@ -660,7 +709,7 @@
         </div>
     </div>
 
-    <!-- CONTACT SECTION (LARGE & SPACIOUS) -->
+    <!-- CONTACT SECTION (LARGE & SPACIOUS) with WORKING SOCIAL LINKS -->
     <div id="contact-section" style="scroll-margin-top: 90px;"></div>
     <div class="contact-section" data-aos="fade-up">
         <div class="contact-flex">
@@ -670,10 +719,11 @@
                 <div class="bilingual-text" style="margin-bottom: 20px; font-size:0.95rem;">आपकी रचनात्मकता को हमारी कारीगरी से जोड़ें | ଆପଣଙ୍କ ସୃଜନଶୀଳତାକୁ ଆମର ଶିଳ୍ପ ସହ ଯୋଡ଼ନ୍ତୁ</div>
                 <div class="contact-detail"><i class="fas fa-map-pin"></i> <span>Circuit House, Balangir, Odisha - 767001</span></div>
                 <div class="contact-detail"><i class="fas fa-phone-alt"></i> <span>+91 98765 43210</span></div>
+                <!-- WORKING SOCIAL LINKS: Replace with actual profile URLs -->
                 <div class="social-icons" style="margin-top: 32px;">
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://instagram.com/shreyadesignerstudio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/shreyadesignerstudio" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://youtube.com/@shreyadesignerstudio" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="contact-form">
@@ -706,7 +756,17 @@
 <script>
     AOS.init({ duration: 800, offset: 100, once: false, mirror: false });
     
-    // Smooth scroll with offset for fixed header (ensures no overlapping on each section)
+    // Navbar shadow on scroll
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('.navbar');
+        if(window.scrollY > 20){
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scroll with offset for fixed header
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -714,7 +774,7 @@
             const targetElem = document.querySelector(targetId);
             if(targetElem) {
                 e.preventDefault();
-                const offset = 90;  // accounts for sticky navbar
+                const offset = 90;
                 const elementPosition = targetElem.getBoundingClientRect().top + window.scrollY;
                 window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
             }
